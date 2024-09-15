@@ -5,7 +5,7 @@ import modelos.validacoes.ValidacaoNome;
 import java.util.Scanner;
 
 public class SolicitacaoNome {
-    public static Scanner scann = new Scanner(System.in);
+    private static Scanner scann = new Scanner(System.in);
 
     public static String solicitarNome() {
         String nome;

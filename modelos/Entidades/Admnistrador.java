@@ -1,8 +1,8 @@
-package modelos;
+package modelos.Entidades;
 
 import modelos.interfaces.InterfaceLogin;
 
-public class Admnistrador extends DadosUsuario implements InterfaceLogin{
+public class Admnistrador extends Usuario implements InterfaceLogin{
 
     private String siape;
    
