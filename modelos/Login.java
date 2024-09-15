@@ -1,5 +1,8 @@
 package modelos;
 
+import modelos.Entidades.Admnistrador;
+import modelos.Entidades.Leitor;
+
 import java.util.HashMap;
 import java.util.Map;
 

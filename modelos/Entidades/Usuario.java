@@ -1,13 +1,15 @@
-package modelos;
+package modelos.Entidades;
 
-public abstract class DadosUsuario implements InterfaceUsuario{
+import modelos.InterfaceUsuario;
+
+public abstract class Usuario implements InterfaceUsuario {
 
     protected String nome;
     protected String email;
     protected String cpf;
     protected String senha;
 
-        public DadosUsuario (String nome, String email, String cpf, String senha){
+        public Usuario(String nome, String email, String cpf, String senha){
             this.nome=nome;
             this.email=email;
             this.cpf=cpf;
@@ -21,6 +23,7 @@ public abstract class DadosUsuario implements InterfaceUsuario{
         public void setNome(String nome){
             this.nome=nome;
         }
+
         @Override
         public String getEmail(){
             return email;
@@ -29,6 +32,7 @@ public abstract class DadosUsuario implements InterfaceUsuario{
         public void setEmail(String email){
             this.email=email;
         }
+
         @Override 
         public String getSenha(){
             return senha;
@@ -46,5 +50,4 @@ public abstract class DadosUsuario implements InterfaceUsuario{
             this.cpf=cpf;
         }
 
-    
 }

@@ -1,16 +1,15 @@
-package modelos;
+package modelos.UI;
+
+import modelos.Entidades.Admnistrador;
+import modelos.Entidades.Leitor;
 
 import java.util.Scanner;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Main {
 
     public static Scanner scann = new Scanner(System.in);
     // Armazenar usuários para simular um banco de dados
-    public static Map<String, Leitor> leitores = new HashMap<>();
-    public static Map<String, Admnistrador> administradores = new HashMap<>();
-
+    .
     public static void main(String[] args) {
 
         while (true) {  
@@ -39,37 +38,7 @@ public class Main {
         }
     }
 
-    public static void realizarCadastro() {
-        
-            System.out.println("Bem-vindo ao sistema de cadastro!");
-             String nome = SolicitacaoNome.solicitarNome(); 
-        
-        System.out.println("Escolha o tipo de usuário:");
-        System.out.println("1 - Leitor");
-        System.out.println("2 - Administrador");
-        int opcao = scann.nextInt();
-        scann.nextLine(); 
 
-        if (opcao == 1) {
-            Leitor leitor = Cadastrar.cadastrarLeitor(nome);
-            leitores.put(leitor.getMatricula(), leitor); // Armazenar leitor no mapa
-            System.out.println("\nLeitor cadastrado com sucesso!");
-            System.out.println("Nome: " + leitor.getNome());
-            System.out.println("Email: " + leitor.getEmail());
-            System.out.println("Matrícula: " + leitor.getMatricula());
-
-        } else if (opcao == 2) {
-            Admnistrador admin = Cadastrar.cadastrarAdministrador(nome);
-            administradores.put(admin.getSiape(), admin); // Armazenar administrador no mapa
-            System.out.println("\nAdministrador cadastrado com sucesso!");
-            System.out.println("Nome: " + admin.getNome());
-            System.out.println("Email: " + admin.getEmail());
-            System.out.println("SIAPE: " + admin.getSiape());
-
-        } else {
-            System.out.println("Opção inválida!");
-        }
-    }
 
     public static void realizarLogin() {
         // Verificar se há leitores ou administradores cadastrados
@@ -100,6 +69,13 @@ public class Main {
 
             if (leitor != null && leitor.login(matricula, senha)) {
                 System.out.println("\nLogin bem-sucedido como Leitor!");
+                LivroService.LitroLeitor();
+
+
+
+
+
+
             } else {
                 System.out.println("\nMatrícula ou senha inválidos para Leitor.");
             }
@@ -119,11 +95,19 @@ public class Main {
 
             if (administrador != null && administrador.login(siape, senha)) {
                 System.out.println("\nLogin bem-sucedido como Administrador!");
+
             } else {
                 System.out.println("Identificador ou senha inválidos para Administrador.");
             }
         } else {
             System.out.println("Tipo de usuário não identificado.");
         }
+
     }
+
+    public static void AcessoDoLeitor(){
+
+
+    }
+
 }

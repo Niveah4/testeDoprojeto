@@ -1,8 +1,8 @@
-package modelos;
+package modelos.Entidades;
 
 import modelos.interfaces.InterfaceLogin;
 
-public class Leitor extends DadosUsuario implements InterfaceLogin{
+public class Leitor extends Usuario implements InterfaceLogin{
 
         private String matricula;
        

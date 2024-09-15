@@ -9,6 +9,4 @@ public class InvalidCpfFormat extends Exception{
     public InvalidCpfFormat(String mensagem){
         super(mensagem);
     }
-
-    
 }
