@@ -1,0 +1,33 @@
+leitores.put("12345", new Leitor("João", "joao@example.com", "123.456.789-00", "senha123", "12345"));
+        administradores.put("67890", new Admnistrador("Maria", "maria@example.com", "987.654.321-00", "senha456", "67890"));
+
+        System.out.println("Bem-vindo ao sistema de login!");
+        System.out.println("Digite o tipo de usuário:");
+        System.out.println("1 - Leitor");
+        System.out.println("2 - Administrador");
+        int tipoUsuario = scann.nextInt();
+        scann.nextLine(); // Limpa o buffer do scanner
+
+        System.out.println("Digite seu identificador:");
+        String identificador = scann.nextLine();
+        System.out.println("Digite sua senha:");
+        String senha = scann.nextLine();
+
+        if (tipoUsuario == 1) {
+            Leitor leitor = leitores.get(identificador);
+            if (leitor != null && leitor.login(identificador, senha)) {
+                System.out.println("Login bem-sucedido como Leitor!");
+            } else {
+                System.out.println("Identificador ou senha inválidos para Leitor.");
+            }
+        } else if (tipoUsuario == 2) {
+            Admnistrador administrador = administradores.get(identificador);
+            if (administrador != null && administrador.login(identificador, senha)) {
+                System.out.println("Login bem-sucedido como Administrador!");
+            } else {
+                System.out.println("Identificador ou senha inválidos para Administrador.");
+            }
+        } else {
+            System.out.println("Tipo de usuário não identificado.");
+        }
+    }
